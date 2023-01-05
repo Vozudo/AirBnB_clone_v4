@@ -1,6 +1,6 @@
 $(document).ready(function () {
   const dictamenity = {};
-  $('input[type="Checkbox"]'.click(function () {
+  $('input[type="checkbox"]').click(function () {
     if ($(this).is(":checked")) {
       dictamenity[$(this).attr('data-name')] = $(this).attr('data-id');
     } else {
@@ -8,5 +8,5 @@ $(document).ready(function () {
     }
     const name_amenity = Object.keys(dictamenity);
     $('.amenities h4').text(names.sort().join(', '));
-  }));
+  });
 });

@@ -9,4 +9,14 @@ $(document).ready(function () {
     const name_amenity = Object.keys(dictamenity);
     $('.amenities h4').text(name_amenity.sort().join(', '));
   });
+
+  $(function () {
+    $.get('http://localhost:5001/api/v1/status/', function (data, txt_status) {
+      if (txt_status === 200 || data.status === 'OK') {
+        $('#api_status').addClass('available');
+      } else {
+        $('#api_status').removeClass('available');
+      }
+    });
+  })
 });
